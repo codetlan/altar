@@ -6,7 +6,3 @@ features
 /doc
 /public
 /tmp
-README.rdoc
-Gemfile.lock
-true
-/db/development.sqlite3
