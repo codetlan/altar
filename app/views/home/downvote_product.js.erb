@@ -1,0 +1,6 @@
+<% if @product && @product.id %>
+    $('#like-product-<%= @product.id %>').html('<%= escape_javascript(render(:partial => 'like', :locals => {:product => @product, :bandera => false} ))%>');
+    $('#likes-bar-product-<%= @product.id %> div:lt(2)').remove();
+<% else %>
+    $('#like-product-<%= @artist.id %>').html('<%= escape_javascript(render(:partial => 'like', :locals => {:product => @artist, :bandera => true} ))%>');
+<% end %>

@@ -1,0 +1,35 @@
+
+<div class="well form product-show-container">
+	<div class="row-fluid">
+		<video width="100%" controls="controls">
+			<source src="<%= @artist.interview %>" type="video/mp4" />
+			  			Your browser does not support the video tag.
+		</video>
+		<div class="well form artist-info-bar media">
+            <div class="pull-left"> <%= image_tag(@artist.avatar_url, :style => "width: 82px; height: 82px;", :class =>'img-polaroid')%>
+            </div>
+              <div id="like-product-<%= @artist.id %>">
+                <% if user_signed_in?  %>
+                    <%= render :partial => 'like', :locals => {:product => @artist, :bandera => true} %>
+                <% else %>
+                    <div id="like-on-product-<%=@artist.id%>" class="pull-right fui-heart-24 like" ><h4><%= @artist.votes.up.size %></h4></div>
+                <% end %>
+              </div>
+            <div class="media-body artist-info">
+                <h4 class="media-heading artist-name"><%= @artist.name%></h4>
+               <p><%= @artist.bio%></p>
+               	<%=	mail_to @artist.email, @artist.email,:class =>"artist-name"%>		
+            </div>
+		</div>
+		<div style='clear:both; margin-bottom:15px; border-bottom:1px #CCC solid;' ></div> 
+    <div id = "User-comments"> 
+		  <%@artist.comments.each do |comment|%>
+        <%= render :partial => '/shared/comment_tpl',:locals => {:comment => comment} %>
+      <%end%>
+    </div>
+        <!-- agregar comentarios -->
+        <%= render :partial => '/shared/comment_form',:locals => {:commentable_id => @artist.id,
+        :commentable_type => 'User',:clase => "comment-form-object",:hide => false, :toggle_node_trigger => ""} %>
+
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<%= form_for(@product, :html => {:multipart => true}, :class =>"form-horizontal" ) do |f| %>	
+ 	<div class="control-group">
+    	<%= f.text_field :name, :placeholder => :name ,:class => "input-xlarge"%> 
+	</div>
+	<div class="control-group">
+	<%= f.collection_select :category_id, Category.find(:all), :id, :name,  {:prompt => 'Selecciona una categoria'}, 
+	                                          :placeholder => :name ,:class => "input-xlarge" %>
+	</div>
+	<div class="control-group">
+	<%= f.collection_select :user_id, User.find(:all), :id, :name,  {:prompt => 'Selecciona un artista'}, 
+	                                          :placeholder => :name ,:class => "input-xlarge" %>
+	</div>
+	<div class="control-group">
+    	<%= f.text_area :description, :placeholder => :description, :class => "input-xxlarge", :rows =>"5"%> 
+	</div>
+	<div class="control-group">
+		<div class="input-prepend input-append">
+    		<span class="add-on black-text">$</span>
+			<%= f.text_field :price, :placeholder => :price %>
+			<span class="add-on black-text">.00</span>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= image_tag(@product.photo_url) if @product.photo? %>
+    	<%= f.file_field :photo, :placeholder => :photo %>
+	</div>	
+	<div class="control-group">
+    	<%= f.text_area :poem, :placeholder => :poem, :class => "input-xxlarge", :rows =>"10" %>
+	</div>
+	<div class="control-group">
+    	<%= f.submit 'Guardar', :class => "btn btn-info pull-right"%>
+  	</div>
+<% end %>

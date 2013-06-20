@@ -1,0 +1,11 @@
+<div class="media product-comments well form">
+    <a class="pull-left" href="#">
+      <div > 
+      <%= image_tag(comment.user.avatar_url, :style => "width:60px; height:60px;", :class =>'photo img-circle')%>
+      </div>
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading"><%= comment.user.name%></h4>
+      <%= comment.comment%>
+    </div>
+</div>

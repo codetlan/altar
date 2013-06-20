@@ -1,0 +1,11 @@
+<%= form_for(@category, :class =>"form-horizontal" ) do |f| %>	
+ 	<div class="control-group">
+    	<%= f.text_field :name, :placeholder => :name ,:class => "input-xlarge"%> 
+	</div>
+	<div class="control-group">
+    	<%= f.text_area :description, :placeholder => :description, :class => "input-xxlarge", :rows =>"5"%> 
+	</div>
+	<div class="control-group">
+    	<%= f.submit 'Guardar', :class => "btn btn-info pull-right"%>
+  </div>
+<% end %>

@@ -1,0 +1,65 @@
+<div class="form login-screen profile">
+	<div class="login-icon profile-icon">
+    	<%= image_tag(@user.avatar_url,:style => "width:64px;height:64px",:class => 'img-circle') if @user.avatar? %>
+    	<h4><small><%=@user.name %></small></h4>
+  	</div>
+	<div class="login-form" style ="margin-left:-100px;">
+		<%= form_for(@user, :html => {:multipart => true}) do |f| %>
+		 <div class="control-group">
+		        <%= f.label :avatar %>
+		        <%= f.file_field :avatar %>
+		      </div>
+		    	
+		    	<div class="control-group">
+		        <%= f.label :name %>
+		        <%= f.text_field :name %>
+		      </div>
+		      <div class="control-group">
+		        <%= f.label :email %>
+		        <%= f.email_field :email %>
+		      </div>
+
+
+		      <% if current_user.role === 'Admin' %>
+		      <div class="control-group">
+		        <%= f.label :role %>
+		        <%= f.select :role, ["Admin", "Artist", "User"], :class => 'input-xlarge' %>
+		      </div>
+		      <div class="control-group">
+		    	 <%= f.label :workshop %>
+		    	 <%= f.collection_select :workshop_id, Workshop.find(:all), :id, :name,  {:prompt => 'Selecciona un taller'}, 
+		    	                                          :placeholder => :workshop ,:class => "input-xlarge" %>
+		      </div>
+		      <%end%>
+
+		      <!-- <%= f.label :address %>
+		      <%= f.text_area :address , :placeholder => :address, :class => "input-xxlarge", :rows =>"5"%> -->
+		      <div class="control-group">
+		        <%= f.label :bio %>
+		        <%= f.text_area :bio , :placeholder => :bio, :class => "input-xxlarge", :rows =>"5"%>
+		      </div>
+		      <% if current_user.role != 'User' %>
+		      <div class="control-group">
+		      <% if @user.interview? %>
+		      <video width="540" height="340" controls="controls">
+		      <source src="<%= @user.interview %>" type="video/mp4" />
+		      Your browser does not support the video tag.
+		        </video>
+		      <%end%>
+		      <%= f.label :interview %>
+		      <%= f.file_field :interview, :placeholder => :interview %>
+		      </div>
+		      <%end%>
+
+
+		    <!--   <div class="control-group warning">
+		      <%= f.label :current_password %>
+		      <%= f.password_field :current_password, :value => @user.password %><span class="help-inline">(we need your current password to confirm your changes)</span>
+		      </div> -->
+
+		      <div class="control-group">
+		      <%= f.submit 'Guardar', :class => "btn btn-large  btn-primary "%>
+		      </div>
+		<% end %>
+	</div>
+</div>

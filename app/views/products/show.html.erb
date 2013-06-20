@@ -1,0 +1,122 @@
+<div class="well form product-show-container">
+	<div class="row-fluid">
+    	<div class="span9">
+      		<div class ="product-image"> 
+      			<%= image_tag(@product.photo, :class =>'photo')%>
+      			<div class="users-likes-bar" id="likes-bar-product-<%= @product.id %>">
+						  <%@product.votes.up.each do |i|%>
+							   <div class="fui-heart-16 user-likes">&nbsp;</div>
+						  <%end%>
+				    </div>
+      			<div class="clear"></div>
+      		  <div class="well form product-price-like-bar">
+			      <div class="pull-left product-price"><%= number_to_currency @product.price%></div>
+                  <div id="like-product-<%= @product.id %>">
+                      <% if user_signed_in?  %>
+                          <%= render :partial => 'home/like', :locals => {:product => @product, :bandera => false} %>
+                      <% else %>
+                          <div class="pull-right fui-heart-24 like"><h4><%= @product.votes.up.size %></h4></div>
+                  <% end %>
+                  </div>
+			  </div>
+
+      		</div>
+
+      	<div style='clear:both; margin-bottom:15px; border-bottom:1px #CCC solid;' ></div> 
+        <div id = "Product-comments">  	
+      	  <%@product.comments.each do |comment|%>
+      	     <%= render :partial => '/shared/comment_tpl',:locals => {:comment => comment} %>
+          <%end%>
+        </div>
+        <!-- agregar comentarios -->
+        <%= render :partial => '/shared/comment_form',:locals => {:commentable_id => @product.id,
+        :commentable_type => 'Product',:clase => "comment-form-object",:hide => false, :toggle_node_trigger => ""} %>
+
+    	</div>
+    	<div class="span3 well form ">
+      	<div class="artist-avatar">
+          <%= link_to image_tag(@product.user.avatar_url, :style => "width: 100px; height: 100px;", :class =>'img-polaroid'), artist_profile_url(:id => @product.user.id)%>
+        </div>
+        <div class="artist-ribbon">
+          <!-- ribbon -->
+        <div class="ribbon"><div class="ribbon-stitches-top"></div><strong class="ribbon-content"><h1><%= @product.user.name%></h1></strong><div class="ribbon-stitches-bottom"></div></div>
+          <!-- endribbon -->
+        </div> 
+        <div class="product-description">
+                <h4 class="media-heading"><%= @product.name%></h4>
+                <%= @product.description%>
+        </div>
+        <div class="product-buy sticky">
+          <div class="sticky-product well form" style="display:none">
+            <%= image_tag(@product.photo, :style => "width:148px;height:128px", :class =>'photo')%>
+            <p><%= @product.user.name%> <br><%= number_to_currency @product.price%></p>
+          </div>
+          <a href='#paymentModal' role="button" class="btn btn-large btn-primary" data-toggle="modal">Comprar</a>
+        </div>
+    	</div>
+  	</div>
+</div>
+<!-- Modal -->
+<div id="paymentModal"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3 id="myModalLabel">Comprar</h3>
+  </div>
+  <div class="modal-body">
+    <form method="post" class="default-form comment-form" action= "https://www.paypal.com/cgi-bin/webscr">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="soporte@codetlan.com">
+
+    <!-- aqui la información del producto -->
+      <div class="">
+        <h3 class="media-heading"><%= @product.name%></h3>
+        <%= @product.description%>
+        <h2 class="media-heading"><%= number_to_currency @product.price%></h2>
+      </div>
+
+      <!-- <input style="margin-top: 10px; margin-right: 10px;" value=<%= @product.name%> disabled> -->
+      <input type="hidden" name="item_name" value=<%= @product.name%> > <!-- Se duplican los campos por que para paypal deben de ir como hidden-->
+      <!-- <input style="margin-top: 10px; margin-right: 10px;" value=<%= @product.id%> disabled> -->
+      <input type="hidden" name="item_number" value=<%= @product.id%> >
+      <!-- <input style="margin-top: 10px; margin-right: 10px;" value="$ <%= @product.price%>" disabled> -->
+      <input type="hidden" name="amount" value=<%= @product.price%> >
+      <!-- <input style="margin-top: 10px; margin-right: 10px;" value="1" disabled> -->
+      <input type="hidden" name="no_shipping" value="1" >
+      <input type="submit" class="btn btn-large btn-primary" style="margin-top: 10px; margin-right: 10px;" value="Comprar Ahora">
+    </form>
+  </div>
+</div>
+<!-- End Modal -->
+<script type="text/javascript">
+    $(function(){ // document ready
+
+      if (!!$('.sticky').offset()) { // make sure ".sticky" element exists
+        var sticky = $('.sticky').offset();
+        var stickyTop = sticky.top; 
+        $(window).scroll(function(){ // scroll event
+          var windowTop = $(window).scrollTop(); // returns number 
+          if (stickyTop - 50 < windowTop){
+            $('.sticky-product').show();
+            $('.sticky').css({ position: 'fixed', top: 45, left:sticky.left});
+          }
+          else {
+            sticky = $('.sticky').offset();
+            stickyTop = sticky.top;
+            $('.sticky').css('position','static');
+            $('.sticky-product').hide();
+          }
+
+        });
+      }
+
+    });
+
+    $('#like-upvote-product-<%= @product.id %>').click(function() {
+        $.get("<%= @product.id %>/upvote_product");
+    });
+    $('#like-downvote-product-<%= @product.id %>').click(function() {
+        $.get("<%= @product.id %>/downvote_product");
+    });
+
+  </script>
+

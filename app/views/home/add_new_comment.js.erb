@@ -1,0 +1,7 @@
+<%if @hide%>
+	$("#comment-on-<%=@comment.commentable_type%>-<%=@comment.commentable_id%>").html('<h4><%=@comment.commentable.comments.size%></h4>');
+<%else%>
+	$("#<%=@comment.commentable_type%>-comments").append('<%= escape_javascript(render(:partial => '/shared/comment_tpl', :locals => {:comment => @comment}))%>');
+<%end%>
+// reseteamos el formulario
+$("#cancel-comment-form-<%=@comment.commentable_id%>").trigger('click');

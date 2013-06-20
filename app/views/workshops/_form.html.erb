@@ -1,0 +1,25 @@
+<%= form_for(@workshop, :html => {:multipart => true}, :class =>"form-horizontal" ) do |f| %>	
+ 	<div class="control-group">
+    	<%= f.text_field :name, :placeholder => :name ,:class => "input-xlarge"%> 
+	</div>
+	<div class="control-group">
+    	<%= f.text_area :address, :placeholder => :address, :class => "input-xxlarge", :rows =>"5"%> 
+	</div>
+	<div class="control-group">
+		<%= image_tag(@workshop.wall_url) if @workshop.wall? %>
+    	<%= f.file_field :wall, :placeholder => :wall %>
+	</div>	
+	<div class="control-group">
+		<% if @workshop.video? %>
+			<video width="600" height="340" controls="controls">
+			  <source src="<%= @workshop.video %>" type="video/mp4" />
+			  Your browser does not support the video tag.
+			</video>
+		<%end%>
+    	<%= f.file_field :video, :placeholder => :video %>
+	</div>
+	<div class="control-group">
+    	<%= f.submit 'Guardar', :class => "btn btn-info pull-right"%>
+  </div>
+<% end %>
+

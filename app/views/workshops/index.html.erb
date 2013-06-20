@@ -1,0 +1,33 @@
+<div class="well list">
+	<h1>
+		<small>
+			Listing workshops
+			<%= link_to 'New Workshop', new_workshop_path , :class => "btn btn-info pull-right"%>		
+		</small>
+	</h1><br>
+	<ul class="thumbnails">
+	<% @workshops.each do |workshop| %>
+		<li class="span4">
+          <div class="thumbnail">				
+            <div class="caption">
+              <h5><%= workshop.name %></h5>
+			  <p><%= workshop.address %></p>
+			  <p><%= image_tag(workshop.wall,:size => "320x240")%></p>
+			  <p>
+				<video width="320" height="240" controls="controls">
+				  <source src="<%= workshop.video %>" type="video/mp4" />
+				  Your browser does not support the video tag.
+				</video>
+			  </p>			  			  
+			  <p> 	
+					<%= link_to 'Show', workshop %> |
+					<%= link_to 'Edit', edit_workshop_path(workshop), :class => "" %> |
+					<%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' },:class => "" %>
+			  </p>
+            </div>
+          </div>
+        </li>
+	<% end %>
+	</ul>	
+</div>
+

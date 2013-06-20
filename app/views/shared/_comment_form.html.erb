@@ -1,0 +1,27 @@
+<% if user_signed_in?%>
+<div id="add-<%=commentable_type%>-comment-<%=commentable_id%>" style="<%="display:none" if hide%>" class="<%=clase%>">
+<%= form_tag add_new_comment_path, :class => "default-form comment-form", :remote =>true do %>
+    <%= text_area_tag "comment", nil, :rows => 2, :cols => 176, :placeholder=>'agregar comentario'  %>
+    <%= hidden_field_tag 'commentable_id', commentable_id %>
+    <%= hidden_field_tag 'commentable_type', commentable_type %>
+    <%= hidden_field_tag 'hide', hide %>
+    <div class="submit-area"></div>
+    <%= submit_tag "Comentar",:class=>"btn  btn-primary pull-right" %>
+    <%= button_tag "Cancelar", :type => 'button', :class=>'btn pull-right', :id=>'cancel-comment-form-'+commentable_id.to_s %>
+<% end %>
+</div>
+
+<script>		
+	// para los comentarios de los productos
+	$("#<%=toggle_node_trigger%>").on('click',function(){
+		$("#add-<%=commentable_type%>-comment-<%=commentable_id%>").toggle();
+	});
+	$("#cancel-comment-form-<%=commentable_id%>").on('click',function(){
+		$(this).closest('form').reset();
+
+		if(<%=hide%>){
+			$("#add-<%=commentable_type%>-comment-<%=commentable_id%>").hide();
+		}
+	});
+</script>
+<% end%>

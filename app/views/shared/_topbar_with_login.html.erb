@@ -1,0 +1,35 @@
+
+
+	<div class="navbar navbar-fixed-top">
+	    <div class="navbar-inner navbar-custom">
+	      <div class="container">
+	        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	          <span class="icon-bar"></span>
+	        </a>
+	        <%= image_tag('icon.png', :style => "width: 32px; height: 32px;", :class => "brand altar-icon")%>
+			<%= link_to 'Altar', root_path, :class => "brand name" %>
+			<a class="btn pull-right  uibutton large confirm" href="<%=user_omniauth_authorize_url(:facebook)%>" style="margin-top: 10px;">
+               f&nbsp;|&nbsp; Facebook
+            </a>
+			<div class="pull-right">&nbsp;&nbsp;</div>
+	          <!-- <div class="btn-group pull-right">
+    			<a class="btn  btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                   	<i class="icon-tags"></i> Categorias
+                  <span class="caret"></span>
+                </a>
+              <ul class="dropdown-menu drop-menu-li-class">
+              	<% @last_cat = @categories.pop %>
+                <% @categories.each do |category| %>
+					<li><%= link_to category.name, '#' %></li>
+			        <li class="divider"></li>
+				<% end %> 
+					<li><%= link_to @last_cat.name, '#' %></li>      
+              </ul>
+    		</div>  -->    
+			  <div class="pull-right">&nbsp;&nbsp;</div>
+			 <%= render(:partial => "shared/search_form")  %>	        
+	      </div>
+	    </div>
+	  </div>

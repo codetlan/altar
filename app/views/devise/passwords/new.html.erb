@@ -1,0 +1,12 @@
+<div class="well form">
+<legend>¿Olvidaste tu contraseña?</legend>
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <div class="control-group">
+  	<%= f.submit 'Enviar', :class => "btn btn-info"%>
+  </div>
+<% end %>
+<%= render "links" %>
+</div>

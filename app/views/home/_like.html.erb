@@ -1,0 +1,23 @@
+<% vote_product = product.votes.up%>
+<%if  vote_product[0] == nil %>
+    <div id="like-upvote-product-<%= product.id %>" class="pull-right fui-heart-24 like"><h4><%= product.votes.up.size %></h4></div>
+<% else %>
+    <div id="like-downvote-product-<%= product.id %>" class="pull-right fui-heart-24 unlike"><h4><%= product.votes.up.size %></h4></div>
+<% end %>
+
+<script>
+    $('#like-upvote-product-<%= product.id %>').click(function() {
+        if(<%= bandera %>){
+            $.get("/upvote_product/<%= product.id %>",{id: <%= product.id %>, type: 'artist'}, null, "script");
+        } else {
+            $.get("/upvote_product/<%= product.id %>");
+        }
+    });
+    $('#like-downvote-product-<%= product.id %>').click(function() {
+        if(<%= bandera %>){
+            $.get("/downvote_product/<%= product.id %>",{id: <%= product.id %>, type: 'artist'}, null, "script");
+        } else {
+            $.get("/downvote_product/<%= product.id %>");
+        }
+    });
+</script>

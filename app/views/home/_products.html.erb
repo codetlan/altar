@@ -1,0 +1,44 @@
+<% @products.each do |product| %>	
+	<div class="producto">	
+		<div class ="avatar"> <%= link_to image_tag(product.user.avatar_url, :size => "60x60", :class =>'photo'), artist_profile_url(:id => product.user.id)%></div>
+		<div class ="product-img">
+			<%=	link_to image_tag(product.photo,:size => "600x600"), product%>
+			<div class= "action-footer" style='display:none'></div>
+			<div class= "actions-footer" style='display:none'>
+				<%=	link_to number_to_currency(product.price), product, :class =>"pull-left btn  btn-primary price"%>
+				<div class="pull-right fui-bubble-24 comment" id="comment-on-Product-<%=product.id%>"><h4><%=product.comments.size%></h4></div>
+                <div id="like-product-<%= product.id %>">
+                    <% if user_signed_in?  %>
+                        <%= render :partial => 'like', :locals => {:product => product, :bandera => false} %>
+                    <% else %>
+                        <div id="like-on-product-<%=product.id%>" class="pull-right fui-heart-24 like" ><h4><%= product.votes.up.size %></h4></div>
+                    <% end %>
+                </div>
+			</div>
+		</div>
+
+		<div class ="product-info" style="clear:both;">
+
+		<!-- zona de comentarios -->
+			<%= render :partial => '/shared/comment_form',:locals => {:commentable_id => product.id,
+				:commentable_type => 'Product',:clase => "comment-form-main",:hide => true, :toggle_node_trigger => "comment-on-Product-#{product.id}"} %>
+
+			<div style="clear:both;"></div>
+			<p><%=	link_to product.name, product%></p>
+			<p><%=	link_to product.user.name, artist_profile_url(:id => product.user.id)%></p>
+			<p style="color:#CCC;font-size:16px;margin-top:-5px;"><%=	product.category.name %></p>
+		</div>
+	</div>
+<% end%>
+
+<script>
+	$('.product-img').mouseenter(function () {
+		$(this).children('.action-footer').show();
+		$(this).children('.actions-footer').show();
+		$(this).parent().children('.product-info').css("padding-top", "20px");
+	}).mouseleave(function () {
+		$(this).children(".action-footer").hide();
+		$(this).children(".actions-footer").hide();
+		$(this).parent().children('.product-info').css("padding-top", "10px");
+	});
+</script>

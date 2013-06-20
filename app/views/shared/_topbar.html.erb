@@ -1,0 +1,46 @@
+
+ <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner navbar-custom">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= image_tag('icon.png', :style => "width: 25px; height: 25px;", :class => "brand altar-icon")%>
+        <%= link_to 'Altar', root_path, :class => "brand name" %>               
+          <div class="pull-right" style="color:white;margin:10px 0 0 5px;"><%= current_user.name%></div>
+		      <div class="btn-group pull-right">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+              <%= image_tag(current_user.avatar, :style => "width: 32px; height: 32px;", :class => " img-circle")%>
+            </a>
+            <ul class="dropdown-menu drop-menu-li-class">
+              <li><%= link_to 'Profile', edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </div>
+
+          <div class="pull-right">&nbsp;&nbsp;</div>
+      
+      <% if current_user.role == 'Admin' %>
+
+        <div class="btn-group pull-right">
+    			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fui-menu-24">&nbsp;</i>
+                  <!-- <span class="caret"></span>	 -->
+                </a>
+              <ul class="dropdown-menu drop-menu-li-class">
+                <li ><%= link_to 'Productos', products_path %></li>
+                <li><%= link_to 'Categorias', categories_path %></li>
+                <li><%= link_to 'Talleres', workshops_path %></li> 
+    			<li><%= link_to 'Usuarios', users_path %></li>         
+              </ul>
+    		</div>
+        <div class="pull-right">&nbsp;&nbsp;</div>
+          <%= render(:partial => "shared/search_form")  %>
+      <% end %>  
+      </div>
+    </div>
+  </div>
+

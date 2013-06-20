@@ -1,0 +1,18 @@
+<div class="well form">
+	<div class="thumbnail">
+    <div class="caption">
+      <h5><%= @workshop.name %></h5>
+	  <p><%= @workshop.address %></p>
+	  <p><%= image_tag(@workshop.wall,:size => "600x340")%></p>
+	  <p>
+		<video width="600" height="340" controls="controls">
+		  <source src="<%= @workshop.video %>" type="video/mp4" />
+		  Your browser does not support the video tag.
+		</video>
+	  </p>
+    </div>
+	<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
+	<%= link_to 'Back', workshops_path %>|
+	<%= link_to 'Destroy', @workshop, method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+</div>

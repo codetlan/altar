@@ -1,0 +1,35 @@
+<div class="well list">
+	<h1>
+		<small>
+			Usuarios
+			<%= link_to 'Agregar Usuario', new_user_path , :class => "btn btn-info pull-right"%>		
+		</small>
+	</h1>
+	<ul class="thumbnails">
+	<% @users.each do |user| %>
+		<li class="span4">
+          <div class="thumbnail user-info">
+            <%= image_tag(user.avatar,:size => "60x60")%>
+            <div class="caption">
+              <h5><%= user.name %></h5>
+			  <p><%= user.email %></p>
+			  <p><%= user.role %></p>
+              <p><%= user.bio %></p>
+			 <% if user.interview? %>
+			  <p>
+			  	<video width="360" height="340" controls="controls">
+			  		<source src="<%= user.interview %>" type="video/mp4" />
+			  			Your browser does not support the video tag.
+			    </video>
+			  </p>
+			  <%end%>
+			  <p> 	
+				<%= link_to "Editar",edit_user_path(user)%>
+			  </p>
+            </div>
+          </div>
+        </li>
+	<% end %>
+	</ul>	
+</div>
+

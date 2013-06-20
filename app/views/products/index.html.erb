@@ -1,0 +1,30 @@
+<div class="well list">
+	<h1>
+		<small>
+			Listing products
+			<%= link_to 'New Product', new_product_path , :class => "btn btn-info pull-right"%>		
+		</small>
+	</h1><br>
+	<ul class="thumbnails">
+	<% @products.each do |product| %>
+		<li class="span3">
+          <div class="thumbnail">
+            <%=	image_tag(product.photo)%>
+            <div class="caption">
+              <h5><%= product.name %></h5>
+			  <p><%= product.user.email %></p>
+			  <p><%= number_to_currency product.price %></p>
+              <p><%= product.description %></p>
+			  <p><%= product.poem %></p>
+			  <p> 	
+					<%= link_to 'Show', product %> |
+					<%= link_to 'Edit', edit_product_path(product), :class => "" %> |
+					<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },:class => "" %>
+			  </p>
+            </div>
+          </div>
+        </li>
+	<% end %>
+	</ul>	
+</div>
+
