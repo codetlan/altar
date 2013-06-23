@@ -227,5 +227,5 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
-  OmniAuth.config.full_host = 'http://alt4r.herokuapp.com'
+  #OmniAuth.config.full_host = 'http://alt4r.herokuapp.com'
 end
