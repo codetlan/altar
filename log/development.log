@@ -18520,3 +18520,66 @@ Served asset /bg_body.png - 304 Not Modified (0ms)
 Started GET "/assets/sprites.png" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
 RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
 Served asset /sprites.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(50) DEFAULT '', "comment" text, "commentable_id" integer, "commentable_type" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("comments")
+  [1m[36m (3.0ms)[0m  [1mCREATE INDEX "index_comments_on_commentable_id" ON "comments" ("commentable_id")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("comments")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_info('index_comments_on_commentable_id')[0m
+  [1m[35m (2.8ms)[0m  CREATE INDEX "index_comments_on_commentable_type" ON "comments" ("commentable_type")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("comments")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_comments_on_commentable_type')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_comments_on_commentable_id')[0m
+  [1m[35m (2.7ms)[0m  CREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "photo" varchar(255), "price" decimal, "poem" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "category_id" integer, "user_id" integer) [0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '', "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "authentication_token" varchar(255), "gender" varchar(255), "bio" text, "name" varchar(255), "interview" varchar(255), "avatar" varchar(255), "role" varchar(255), "uid" varchar(255), "provider" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "workshop_id" integer, "address" text) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_users_on_authentication_token')
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_authentication_token')
+  [1m[36m (2.7ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_uid" ON "users" ("uid")[0m
+  [1m[35m (3.0ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "votable_id" integer, "votable_type" varchar(255), "voter_id" integer, "voter_type" varchar(255), "vote_flag" boolean, "vote_scope" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("votes")[0m
+  [1m[35m (2.6ms)[0m  CREATE INDEX "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes" ("votable_id", "votable_type", "vote_scope")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("votes")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_votes_on_votable_id_and_votable_type_and_vote_scope')
+  [1m[36m (2.8ms)[0m  [1mCREATE INDEX "index_votes_on_votable_id_and_votable_type" ON "votes" ("votable_id", "votable_type")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("votes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_votes_on_votable_id_and_votable_type')[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_votes_on_votable_id_and_votable_type_and_vote_scope')
+  [1m[36m (4.3ms)[0m  [1mCREATE INDEX "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes" ("voter_id", "voter_type", "vote_scope")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_list("votes")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_votes_on_voter_id_and_voter_type_and_vote_scope')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_votes_on_votable_id_and_votable_type')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_votes_on_votable_id_and_votable_type_and_vote_scope')[0m
+  [1m[35m (3.0ms)[0m  CREATE INDEX "index_votes_on_voter_id_and_voter_type" ON "votes" ("voter_id", "voter_type")
+  [1m[36m (3.3ms)[0m  [1mCREATE TABLE "workshops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar(255), "video" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "wall" varchar(255), "name" varchar(255)) [0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (4.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (4.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130507052542')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120809041112')[0m
+  [1m[35m (3.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120813004659')
+  [1m[36m (3.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120813005030')[0m
+  [1m[35m (4.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120813010649')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120820043944')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120822002659')
+  [1m[36m (4.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20120823182847')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20120823183158')
+  [1m[36m (4.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130410053813')[0m
+  [1m[35m (4.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130410053931')
+  [1m[36m (4.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130430011521')[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
