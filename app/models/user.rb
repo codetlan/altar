@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :gender,
-    :bio, :name, :interview, :avatar , :role, :workshop_id, :current_password, :address
+    :bio, :name, :interview, :avatar , :role, :workshop_id, :current_password, :address, :provider, :uid
   # attr_accessible :title, :body
   
   mount_uploader :avatar, AvatarUploader 
@@ -25,17 +25,13 @@ class User < ActiveRecord::Base
   acts_as_votable
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-    # user = User.where(:provider => auth.provider, :uid => auth.uid).first
-    user = User.where(:email => auth.info.email).first
-    
-    puts auth.info.to_yaml
-    puts "--------------------"
-    puts auth.extra.raw_info.to_yaml
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    #user = User.where(:email => auth.info.email).first
 
     unless user
       user = User.create(name:auth.extra.raw_info.name,
-                           # provider:auth.provider,
-                           # uid:auth.uid,
+                           provider:auth.provider,
+                           uid:auth.uid,
                            avatar:auth.info.image,
                            email:auth.info.email,
                            password:Devise.friendly_token[0,20]
@@ -43,6 +39,23 @@ class User < ActiveRecord::Base
       user.remote_avatar_url =  auth.info.image
       user.save
     end    
+    user
+  end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+
+    unless user
+      user = User.create(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         avatar:auth.info.image,
+                         email: 'tu@correo.com',
+                         password:Devise.friendly_token[0,20]
+      )
+      user.remote_avatar_url =  auth.info.image
+      user.save
+    end
     user
   end
 

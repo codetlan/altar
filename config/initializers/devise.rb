@@ -214,6 +214,7 @@ Devise.setup do |config|
   :provider_ignores_state => true
   # :scope => %w(email)
 
+  config.omniauth :twitter, "ezVDAiAme2Jfi3p42ep0rQ", "pBzwmEK4ombMvsyukNUz92jgtuPdlgAtMd1AbacR3HA"
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.

@@ -13,6 +13,10 @@
 			<a class="btn pull-right  uibutton large confirm" href="<%=user_omniauth_authorize_url(:facebook)%>" style="margin-top: 10px;">
                f&nbsp;|&nbsp; Facebook
             </a>
+            <div class="pull-right">&nbsp;&nbsp;</div>
+            <a class="btn pull-right  uibutton large twitter" href="<%=user_omniauth_authorize_url(:twitter)%>" style="margin-top: 10px;">
+              t&nbsp;|&nbsp; Twitter
+            </a>
 			<div class="pull-right">&nbsp;&nbsp;</div>
 	          <!-- <div class="btn-group pull-right">
     			<a class="btn  btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
@@ -25,10 +29,10 @@
 					<li><%= link_to category.name, '#' %></li>
 			        <li class="divider"></li>
 				<% end %> 
-					<li><%= link_to @last_cat.name, '#' %></li>      
+					<li><%= link_to '', '#' %></li>
               </ul>
-    		</div>  -->    
-			  <div class="pull-right">&nbsp;&nbsp;</div>
+    		</div>  -->
+		    <div class="pull-right">&nbsp;&nbsp;</div>
 			 <%= render(:partial => "shared/search_form")  %>	        
 	      </div>
 	    </div>

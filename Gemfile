@@ -42,6 +42,8 @@ gem 'omniauth'
 gem 'omniauth-facebook', '1.4.0'
 gem 'oauth2'
 
+#twitter
+gem 'omniauth-twitter'
 # comments
 gem 'acts_as_commentable', '3.0.1'
 #likes
