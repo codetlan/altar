@@ -42,7 +42,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :interview
       t.string :avatar
       t.string :role
-      t.integer :uid
+      t.float :uid
       t.string :provider
       
       t.timestamps
