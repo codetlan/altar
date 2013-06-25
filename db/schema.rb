@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130507052542) do
     t.string   "interview"
     t.string   "avatar"
     t.string   "role"
-    t.integer  "uid"
+    t.string   "uid"
     t.string   "provider"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
