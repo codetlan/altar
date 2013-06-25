@@ -17830,3 +17830,693 @@ Served asset /sprites.png - 304 Not Modified (0ms)
 Started GET "/assets/bg_body.png" for 127.0.0.1 at 2013-06-25 17:15:10 -0500
 RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
 Served asset /bg_body.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+Processing by HomeController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 2 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 3 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 4 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 4 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 5 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 5 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 6 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 6 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  Rendered home/_products.html.erb (233.8ms)
+  Rendered home/index.html.erb within layouts/application (235.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered shared/_search_form.html.erb (61.4ms)
+  Rendered shared/_topbar_with_login.html.erb (65.5ms)
+Completed 200 OK in 406ms (Views: 375.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/artist.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /artist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/button.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /button.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:14 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb-buttons.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /fb-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ribbon.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /ribbon.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icon.png" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bw.jpg" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bw.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_body.png" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bg_body.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprites.png" for 127.0.0.1 at 2013-06-25 17:27:15 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /sprites.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-25 17:27:17 -0500
+Processing by HomeController#index as HTML
+  [1m[35mProduct Load (0.1ms)[0m  SELECT "products".* FROM "products" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 2 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.6ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 3 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.5ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 4 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 4 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 5 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 5 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 6 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 6 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  Rendered home/_products.html.erb (302.5ms)
+  Rendered home/index.html.erb within layouts/application (303.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered shared/_search_form.html.erb (0.8ms)
+  Rendered shared/_topbar_with_login.html.erb (2.9ms)
+Completed 200 OK in 348ms (Views: 320.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/artist.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /artist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/button.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /button.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb-buttons.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /fb-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ribbon.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /ribbon.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bw.jpg" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bw.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icon.png" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprites.png" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /sprites.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_body.png" for 127.0.0.1 at 2013-06-25 17:27:18 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bg_body.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+Processing by HomeController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 2 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 3 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 4 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 4 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 5 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 5 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 6 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 6 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  Rendered home/_products.html.erb (233.5ms)
+  Rendered home/index.html.erb within layouts/application (234.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered shared/_search_form.html.erb (0.7ms)
+  Rendered shared/_topbar_with_login.html.erb (4.4ms)
+Completed 200 OK in 281ms (Views: 251.0ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/artist.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /artist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb-buttons.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /fb-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/button.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /button.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ribbon.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /ribbon.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icon.png" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bw.jpg" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bw.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_body.png" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bg_body.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprites.png" for 127.0.0.1 at 2013-06-25 17:34:17 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /sprites.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-06-25 17:36:18 -0500
+Processing by HomeController#index as HTML
+  [1m[35mProduct Load (0.2ms)[0m  SELECT "products".* FROM "products" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 2 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 3 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.3ms)
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 3 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 4 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 4 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.3ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 4 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 5 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 5 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."commentable_id" = 6 AND "comments"."commentable_type" = 'Product'
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 6 AND "votes"."votable_type" = 'Product' AND "votes"."vote_flag" = 't'[0m
+  Rendered shared/_comment_form.html.erb (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 2 LIMIT 1
+  Rendered home/_products.html.erb (275.6ms)
+  Rendered home/index.html.erb within layouts/application (276.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1mSELECT "categories".* FROM "categories" [0m
+  Rendered shared/_search_form.html.erb (0.7ms)
+  Rendered shared/_topbar_with_login.html.erb (2.6ms)
+Completed 200 OK in 322ms (Views: 292.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/artist.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /artist.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/button.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /button.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fb-buttons.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /fb-buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/flat-ui.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /flat-ui.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ribbon.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /ribbon.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap/bootstrap-affix.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /twitter/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bw.jpg" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bw.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icon.png" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_body.png" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /bg_body.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sprites.png" for 127.0.0.1 at 2013-06-25 17:36:19 -0500
+RailsDevTweaks: Skipping ActionDispatch::Reloader hooks for this request.
+Served asset /sprites.png - 304 Not Modified (0ms)
